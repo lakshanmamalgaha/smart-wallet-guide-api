@@ -9,6 +9,7 @@ public class Transaction {
 	@Id
 	String Id;
 	String name;
+	String category;
 	String iconName;
 	String comment;
 	String date;
@@ -27,6 +28,13 @@ public class Transaction {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	public String getIconName() {
 		return iconName;
