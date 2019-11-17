@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.smart.wallet.model.Transaction;
@@ -23,8 +25,20 @@ public class TransactionController {
 		return transactionService.createTransaction(transaction);
 	}
 	
+	@RequestMapping(value="/getFilterByDate",method=RequestMethod.GET)
+	public List<Transaction> getFilterByDate(@RequestParam(value="filter", required=false, defaultValue="")String filter){
+		return transactionService.getFilterByDate(filter);
+	}
+	
 	@RequestMapping("/getAll")
 	public List<Transaction> getAll(){
 		return transactionService.getAll();
 	}
+	
+	@RequestMapping(value="/getAllByMonthYear",method=RequestMethod.GET)
+	public List<Transaction> getAllByMonthYear(@RequestParam(value="filter", required=false, defaultValue="")String filter){
+		return transactionService.getAllByMothYear(filter);
+	}
+	
+	
 }

@@ -13,6 +13,7 @@ public class Transaction {
 	String iconName;
 	String comment;
 	String date;
+	String yearMonth;
 	int amount;
 	
 	public Transaction(String name, String iconName, String comment, String date, int amount) {
@@ -51,6 +52,15 @@ public class Transaction {
 	public String getDate() {
 		return date;
 	}
+	
+	public String getYearMonth() {
+		return yearMonth;
+	}
+
+	public void setYearMonth(String yearMonth) {
+		this.yearMonth = yearMonth;
+	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}

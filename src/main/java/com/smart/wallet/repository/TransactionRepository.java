@@ -12,4 +12,5 @@ public interface TransactionRepository extends MongoRepository<Transaction,Strin
 
 	public Transaction findByName(String name);
 	public List<Transaction> findByDate(String date);
+	public List<Transaction> findByYearMonth(String yearMoth);
 }

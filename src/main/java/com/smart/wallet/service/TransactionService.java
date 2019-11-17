@@ -17,7 +17,16 @@ public class TransactionService {
 		return transactionRepository.save(transaction);
 	}
 	
+	public List<Transaction> getFilterByDate(String filter){
+		
+		return transactionRepository.findByDate(filter);
+	}
+	
 	public List<Transaction> getAll(){
 		return transactionRepository.findAll();
+	}
+	
+	public List<Transaction> getAllByMothYear(String yearMoth){
+		return transactionRepository.findByYearMonth(yearMoth);
 	}
 }
