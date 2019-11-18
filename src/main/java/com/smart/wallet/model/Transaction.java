@@ -14,6 +14,7 @@ public class Transaction {
 	String comment;
 	String date;
 	String yearMonth;
+	String userId;
 	int amount;
 	
 	public Transaction(String name, String iconName, String comment, String date, int amount) {
@@ -59,6 +60,15 @@ public class Transaction {
 
 	public void setYearMonth(String yearMonth) {
 		this.yearMonth = yearMonth;
+	}
+	
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public void setDate(String date) {
