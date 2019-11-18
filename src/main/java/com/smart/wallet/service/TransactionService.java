@@ -29,4 +29,8 @@ public class TransactionService {
 	public List<Transaction> getAllByMothYear(String yearMoth){
 		return transactionRepository.findByYearMonth(yearMoth);
 	}
+	
+	public List<Transaction> getByCategoryYearMonth(String category,String yearMoth){
+		return transactionRepository.findByCategoryAndYearMonth(category,yearMoth);
+	}
 }

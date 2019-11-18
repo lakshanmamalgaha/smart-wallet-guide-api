@@ -7,5 +7,5 @@ import com.smart.wallet.model.Category;
 
 @Repository
 public interface CategoryRepository extends MongoRepository<Category,String> {
-
+	//Category filterByCategoryIcon(List<category,iconName>);
 }

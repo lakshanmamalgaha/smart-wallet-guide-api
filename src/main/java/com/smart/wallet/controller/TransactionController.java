@@ -1,6 +1,7 @@
 package com.smart.wallet.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +40,14 @@ public class TransactionController {
 	public List<Transaction> getAllByMonthYear(@RequestParam(value="filter", required=false, defaultValue="")String filter){
 		return transactionService.getAllByMothYear(filter);
 	}
-	
+	//List<String> values
+	@RequestMapping(value="/getByCategoryYearMonth",method=RequestMethod.GET)
+	public List<Transaction> getByCategoryYearMonth(@RequestParam Map<String,String> requestParams){
+		
+		//return transactionService.getAllByMothYear(filter);
+		String category=requestParams.get("category");
+		String yearMoth=requestParams.get("yearMoth");
+		return transactionService.getByCategoryYearMonth(category, yearMoth);
+	}
 	
 }
