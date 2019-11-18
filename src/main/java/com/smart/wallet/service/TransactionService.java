@@ -30,7 +30,7 @@ public class TransactionService {
 		return transactionRepository.findByYearMonth(yearMoth);
 	}
 	
-	public List<Transaction> getByCategoryYearMonth(String category,String yearMoth){
-		return transactionRepository.findByCategoryAndYearMonth(category,yearMoth);
+	public List<Transaction> getByUserIdAndYearMonth(String userId,String yearMoth){
+		return transactionRepository.findByUserIdAndYearMonth(userId,yearMoth);
 	}
 }

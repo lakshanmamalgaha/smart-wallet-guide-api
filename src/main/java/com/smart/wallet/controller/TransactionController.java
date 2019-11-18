@@ -40,14 +40,12 @@ public class TransactionController {
 	public List<Transaction> getAllByMonthYear(@RequestParam(value="filter", required=false, defaultValue="")String filter){
 		return transactionService.getAllByMothYear(filter);
 	}
-	//List<String> values
-	@RequestMapping(value="/getByCategoryYearMonth",method=RequestMethod.GET)
+
+	@RequestMapping(value="/getByUserIdAndYearMonth",method=RequestMethod.GET)
 	public List<Transaction> getByCategoryYearMonth(@RequestParam Map<String,String> requestParams){
-		
-		//return transactionService.getAllByMothYear(filter);
-		String category=requestParams.get("category");
-		String yearMoth=requestParams.get("yearMoth");
-		return transactionService.getByCategoryYearMonth(category, yearMoth);
+		String userId=requestParams.get("userId");
+		String yearMonth=requestParams.get("yearMonth");
+		return transactionService.getByUserIdAndYearMonth(userId, yearMonth);
 	}
 	
 }
