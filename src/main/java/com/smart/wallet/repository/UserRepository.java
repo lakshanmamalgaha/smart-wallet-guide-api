@@ -6,4 +6,5 @@ import com.smart.wallet.model.User;
 
 public interface UserRepository extends MongoRepository<User, String> {
 	  public User findByEmail(String email);
+	  //public
 	}
