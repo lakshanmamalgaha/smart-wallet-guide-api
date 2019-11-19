@@ -33,4 +33,8 @@ public class TransactionService {
 	public List<Transaction> getByUserIdAndYearMonth(String userId,String yearMoth){
 		return transactionRepository.findByUserIdAndYearMonth(userId,yearMoth);
 	}
+	
+	public List<Transaction> getAllByUserIdAndYearMonthAndCategory(String userId,String yearMonth, String category){
+		return transactionRepository.findByUserIdAndYearMonthAndCategory(userId, yearMonth, category);
+	}
 }

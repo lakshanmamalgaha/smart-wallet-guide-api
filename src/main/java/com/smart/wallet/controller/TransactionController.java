@@ -48,4 +48,12 @@ public class TransactionController {
 		return transactionService.getByUserIdAndYearMonth(userId, yearMonth);
 	}
 	
+	@RequestMapping(value="/getAllByUserIdAndYearMonthAndCategory",method=RequestMethod.GET)
+	public List<Transaction> getAllByUserIdAndYearMonthAndCategory(@RequestParam Map<String,String> requestParams){
+		String userId=requestParams.get("userId");
+		String yearMonth=requestParams.get("yearMonth");
+		String category = requestParams.get("category");
+		return transactionService.getAllByUserIdAndYearMonthAndCategory(userId, yearMonth,category);
+	}
+	
 }
