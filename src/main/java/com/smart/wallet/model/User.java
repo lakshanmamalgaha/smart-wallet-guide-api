@@ -17,6 +17,13 @@ public class User {
 	private String email;
 	private String password;
 	private String fullname;
+	private int food;
+	private int transportation;
+	private int health;
+	private int rent;
+	private int education;
+	private int entertainment;
+	private int others;
 	private boolean enabled;
 	@DBRef
 	private Set<Role> roles;
@@ -43,6 +50,49 @@ public class User {
 	}
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
+	}
+	
+	public int getFood() {
+		return food;
+	}
+	public void setFood(int food) {
+		this.food = food;
+	}
+	public int getTransportation() {
+		return transportation;
+	}
+	public void setTransportation(int transportation) {
+		this.transportation = transportation;
+	}
+	public int getHealth() {
+		return health;
+	}
+	public void setHealth(int health) {
+		this.health = health;
+	}
+	public int getRent() {
+		return rent;
+	}
+	public void setRent(int rent) {
+		this.rent = rent;
+	}
+	public int getEducation() {
+		return education;
+	}
+	public void setEducation(int education) {
+		this.education = education;
+	}
+	public int getEntertainment() {
+		return entertainment;
+	}
+	public void setEntertainment(int entertainment) {
+		this.entertainment = entertainment;
+	}
+	public int getOthers() {
+		return others;
+	}
+	public void setOthers(int others) {
+		this.others = others;
 	}
 	public boolean isEnabled() {
 		return enabled;
