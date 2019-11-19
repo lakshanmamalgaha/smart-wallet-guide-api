@@ -16,7 +16,7 @@ public class User {
 	@Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
 	private String email;
 	private String password;
-	private String fullname;
+	private String occupation;
 	private int food;
 	private int transportation;
 	private int health;
@@ -45,13 +45,12 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getFullname() {
-		return fullname;
+	public String getOccupation() {
+		return occupation;
 	}
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
 	}
-	
 	public int getFood() {
 		return food;
 	}
