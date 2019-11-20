@@ -12,7 +12,7 @@ import com.smart.wallet.model.Transaction;
 public interface TransactionRepository extends MongoRepository<Transaction,String>  {
 
 	public Transaction findByName(String name);
-	public Transaction findByIdAndUserId(String Id,String userId);
+	public Transaction findByIdAndUserId(String id,String userId);
 	public List<Transaction> findByYearMonth(String yearMoth);
 	public List<Transaction> findByUserIdAndYearMonth(String userId,String yearMonth);
 	public List<Transaction> findByUserIdAndYearMonthAndCategory(String userId,String yearMonth, String category);

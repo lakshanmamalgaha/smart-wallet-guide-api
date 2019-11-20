@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Transaction {
 
 	@Id
-	String Id;
+	String id;
 	String name;
 	String category;
 	String iconName;
@@ -19,11 +19,11 @@ public class Transaction {
 	
 	
 	public String getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(String id) {
-		Id = id;
+		this.id = id;
 	}
 	public String getName() {
 		return name;
