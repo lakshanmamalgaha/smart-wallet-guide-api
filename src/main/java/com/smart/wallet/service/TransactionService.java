@@ -1,6 +1,7 @@
 package com.smart.wallet.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,10 +18,6 @@ public class TransactionService {
 		return transactionRepository.save(transaction);
 	}
 	
-	public List<Transaction> getFilterByDate(String filter){
-		
-		return transactionRepository.findByDate(filter);
-	}
 	
 	public List<Transaction> getAll(){
 		return transactionRepository.findAll();
@@ -36,5 +33,10 @@ public class TransactionService {
 	
 	public List<Transaction> getAllByUserIdAndYearMonthAndCategory(String userId,String yearMonth, String category){
 		return transactionRepository.findByUserIdAndYearMonthAndCategory(userId, yearMonth, category);
+	}
+	
+	public void deleteTransaction(String date) {
+		Transaction t = transactionRepository.findByDate(date);
+		transactionRepository.delete(t);
 	}
 }

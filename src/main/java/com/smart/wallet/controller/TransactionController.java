@@ -26,11 +26,7 @@ public class TransactionController {
 		return transactionService.createTransaction(transaction);
 	}
 	
-	@RequestMapping(value="/getFilterByDate",method=RequestMethod.GET)
-	public List<Transaction> getFilterByDate(@RequestParam(value="filter", required=false, defaultValue="")String filter){
-		return transactionService.getFilterByDate(filter);
-	}
-	
+
 	@RequestMapping("/getAll")
 	public List<Transaction> getAll(){
 		return transactionService.getAll();
@@ -55,5 +51,11 @@ public class TransactionController {
 		String category = requestParams.get("category");
 		return transactionService.getAllByUserIdAndYearMonthAndCategory(userId, yearMonth,category);
 	}
+	@RequestMapping("/deleteAll")
+	public String delete(@RequestParam String date) {
+		transactionService.deleteTransaction(date);
+		return "deleted";
+	}
+	
 	
 }
