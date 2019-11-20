@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Event {
 	@Id
 	private String id;
+	private String name;
 	private String userId;
 	private String category1;
 	private String category2;
@@ -44,6 +45,13 @@ public class Event {
 	}
 	public String getCategory4() {
 		return category4;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public void setCategory4(String category4) {
 		this.category4 = category4;
