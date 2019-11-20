@@ -17,15 +17,6 @@ public class Transaction {
 	String userId;
 	int amount;
 	
-	public Transaction(String id,String name, String iconName, String comment, String date, int amount) {
-		this.Id=id;
-		this.name = name;
-		this.iconName = iconName;
-		this.comment = comment;
-		this.date = date;
-		this.amount = amount;
-	}
-	
 	
 	public String getId() {
 		return Id;
