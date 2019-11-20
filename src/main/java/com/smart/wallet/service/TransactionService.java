@@ -35,8 +35,8 @@ public class TransactionService {
 		return transactionRepository.findByUserIdAndYearMonthAndCategory(userId, yearMonth, category);
 	}
 	
-	public void deleteTransaction(String date) {
-		Transaction t = transactionRepository.findByDate(date);
+	public void deleteTransaction(String id,String userId) {
+		Transaction t = transactionRepository.findByIdAndUserId(id,userId);
 		transactionRepository.delete(t);
 	}
 }

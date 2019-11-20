@@ -51,9 +51,11 @@ public class TransactionController {
 		String category = requestParams.get("category");
 		return transactionService.getAllByUserIdAndYearMonthAndCategory(userId, yearMonth,category);
 	}
-	@RequestMapping("/deleteAll")
-	public String delete(@RequestParam String date) {
-		transactionService.deleteTransaction(date);
+	@RequestMapping(value="/deleteAll",method=RequestMethod.GET)
+	public String delete(@RequestParam Map<String,String> requestParams) {
+		String id = requestParams.get("id");
+		String userId=requestParams.get("userId");
+		transactionService.deleteTransaction(id,userId);
 		return "deleted";
 	}
 	
