@@ -17,8 +17,12 @@ public class EventService {
 		
 	}
 	
-	public List<Event> getEventByUserId(String userId){
-		return eventRepository.findByUserId(userId);
+	public List<Event> getEventByUserId(String userId,String name){
+		return eventRepository.findByUserIdAndName(userId, name);
+	}
+	
+	public List<Event> getAll(){
+	return 	eventRepository.findAll();
 	}
 
 }

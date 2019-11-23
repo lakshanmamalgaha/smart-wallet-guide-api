@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.smart.wallet.model.Event;
 @Repository
 public interface EventRepository extends MongoRepository<Event,String> {
-	public List<Event> findByUserId(String userId);
+	public List<Event> findByUserIdAndName(String userId, String name);
 
 }

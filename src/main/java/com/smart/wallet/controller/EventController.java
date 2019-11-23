@@ -1,6 +1,7 @@
 package com.smart.wallet.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,8 +25,15 @@ public class EventController {
 		return eventService.saveEvent(event);
 	}
 	@RequestMapping(value="/getEvents",method=RequestMethod.GET)
-	public List<Event> getFilterByDate(@RequestParam(value="filter", required=false, defaultValue="")String filter){
-		return eventService.getEventByUserId(filter);
+	public List<Event> getFilterByDate(@RequestParam Map<String,String> requestParams){
+		String userId=requestParams.get("userId");
+		String name = requestParams.get("name");
+		return eventService.getEventByUserId(userId,name);
 	}
+	@RequestMapping(value="/getAllEvents",method=RequestMethod.GET)
+	public List<Event> getAllEvents(){
+		return eventService.getAll();
+	}
+	
 
 }
